@@ -1,0 +1,2 @@
+create view vistaPedidos (Num_producto, nom_producto, Ultimo_pedido, Total_pedido) as select pr.PRODUCTO_NO, DESCRIPCION, max(FECHA_PEDIDO) as "Ultimo pedido", sum(UNIDADES) as "Total pedido" from productos pr, pedidos pe where pr.PRODUCTO_NO=pe.PRODUCTO_NO group by pr.PRODUCTO_NO order by PRODUCTO_NO;
+SELECT * FROM xabiera.vistapedidos;
